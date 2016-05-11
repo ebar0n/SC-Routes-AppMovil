@@ -4,7 +4,7 @@
 
 Dasarrollado con [Ionic](http://ionicframework.com/).
 
-Clonar repositorio, abrir `www/index.html` en firefox, y trabajar normalmente en una app web.
+Clonar repositorio, abrir `./www/index.html` en firefox, y trabajar normalmente en una app web.
 
 ## Compilación
 
