@@ -3,18 +3,18 @@
         <form class="list">
             <label class="item item-input">
                 <i class="icon ion-search placeholder-icon"></i>
-                <input type="search" placeholder="">
+                <input type="search" placeholder="" ng-model="search_value" ng-keyup="search(search_value)" debounce="500">
             </label>
         </form>
         <ion-list>
             <ion-item ng-repeat="route in routes" class="item-icon-left item-icon-right" href="">
                 <i class="icon ion-android-bus"></i>
-                <h2>{{ route.company }}</h2>
+                <h2>{{ route.company.name }}</h2>
                 <strong>{{ route.price }} Bs.</strong>
 
-                <span class="item-note"> {{ route.finalRoutesCompany }} </span>
-                <span ng-repeat="street in route.mainRoutesCompany" class="item-note"> {{ street }} > </span>
-                <span class="item-note"> {{ route.initialRoutesCompany }} > </span>
+                <span class="item-note"> {{ route.finalRoutesCompany.name }} </span>
+                <span ng-repeat="street in route.mainRoutesCompany" class="item-note"> {{ street.name }} > </span>
+                <span class="item-note"> {{ route.initialRoutesCompany.name }} > </span>
                 <i class="icon ion-cash"></i>
             </ion-item>
         </ion-list>
