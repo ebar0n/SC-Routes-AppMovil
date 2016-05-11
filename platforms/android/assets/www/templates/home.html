@@ -7,9 +7,14 @@
             </label>
         </form>
         <ion-list>
-            <ion-item class="item-icon-left item-icon-right" href="tel:">
-                <i class="icon ion-android-bus"></i>21 de mayo
-                <span class="item-note">40 bs</span>
+            <ion-item ng-repeat="route in routes" class="item-icon-left item-icon-right" href="">
+                <i class="icon ion-android-bus"></i>
+                <h2>{{ route.company }}</h2>
+                <strong>{{ route.price }} Bs.</strong>
+
+                <span class="item-note"> {{ route.finalRoutesCompany }} </span>
+                <span ng-repeat="street in route.mainRoutesCompany" class="item-note"> {{ street }} > </span>
+                <span class="item-note"> {{ route.initialRoutesCompany }} > </span>
                 <i class="icon ion-cash"></i>
             </ion-item>
         </ion-list>
