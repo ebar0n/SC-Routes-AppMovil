@@ -1,10 +1,12 @@
 version: '2'
 
 services:
-  node:
-    build:
-      context: .
-      dockerfile: Dockerfile-Node
+  app:
+    image: agileek/ionic-framework
     volumes:
       - ./:/app/
     working_dir: /app
+    command: ionic serve -a
+    ports:
+      - "8100:8100"
+      - "35729:35729"

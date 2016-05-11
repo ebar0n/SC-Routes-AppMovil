@@ -1,18 +1,22 @@
 <ion-view title="Home" id="page2">
     <ion-content padding="true" class="has-header">
         <form class="list">
-            <h1 id="home-heading1" style="color:#000000;">Rutas</h1>
-            <div id="home-markdown1" style="color:#000000;">
-                <p>Búsqueda rápida de rutas en
-                    <strong>San cristóbal</strong>, podrá visualizar la compañía que la cubre y su precio.</p>
-            </div>
             <label class="item item-input">
                 <i class="icon ion-search placeholder-icon"></i>
                 <input type="search" placeholder="">
             </label>
         </form>
         <ion-list>
-            <ion-item href=""></ion-item>
+            <ion-item ng-repeat="route in routes" class="item-icon-left item-icon-right" href="">
+                <i class="icon ion-android-bus"></i>
+                <h2>{{ route.company }}</h2>
+                <strong>{{ route.price }} Bs.</strong>
+
+                <span class="item-note"> {{ route.finalRoutesCompany }} </span>
+                <span ng-repeat="street in route.mainRoutesCompany" class="item-note"> {{ street }} > </span>
+                <span class="item-note"> {{ route.initialRoutesCompany }} > </span>
+                <i class="icon ion-cash"></i>
+            </ion-item>
         </ion-list>
     </ion-content>
 </ion-view>

@@ -20,6 +20,16 @@ angular.module('app.routes', [])
     }
   })
 
+  .state('tabsController.acerca', {
+    url: '/page3',
+    views: {
+      'tab2': {
+        templateUrl: 'templates/acerca.html',
+        controller: 'acercaCtrl'
+      }
+    }
+  })
+
   .state('tabsController', {
     url: '/page1',
     templateUrl: 'templates/tabsController.html',
